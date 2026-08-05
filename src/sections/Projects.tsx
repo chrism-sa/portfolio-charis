@@ -1,7 +1,6 @@
 // src/sections/Projects.tsx
 import { motion } from 'framer-motion';
 import { PROJECTS } from '../constants/data';
-import { FaGithub, FaExternalLinkAlt } from 'react-icons/fa';
 
 export default function Projects() {
   return (
