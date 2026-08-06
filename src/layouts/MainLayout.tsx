@@ -1,4 +1,4 @@
-import { ReactNode } from 'react';
+import type { ReactNode } from 'react';
 import { ReactLenis } from 'lenis/react';
 import CustomCursor from '../components/CustomCursor'; // Pastikan komponen ini tetap ada
 

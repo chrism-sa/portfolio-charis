@@ -23,9 +23,6 @@ import {
   FaMicrosoft,
   FaGoogle,
   FaFigma,
-  FaVideo,
-  FaFilm,
-  FaPalette,
   FaPaintBrush,
 } from "react-icons/fa";
 import { TbBrandFramerMotion } from "react-icons/tb";

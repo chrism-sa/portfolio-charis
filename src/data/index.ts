@@ -1,5 +1,5 @@
 // src/data/index.ts
-import { FaReact, FaPhp, FaPython, FaNodeJs, FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
+import { FaReact, FaPhp, FaPython, FaGithub, FaLinkedin, FaEnvelope, FaWhatsapp } from 'react-icons/fa';
 import { SiTypescript, SiJavascript, SiMysql, SiPostgresql, SiTailwindcss, SiCodeigniter, SiLaravel, SiFigma } from 'react-icons/si';
 
 export const HERO_DATA = {

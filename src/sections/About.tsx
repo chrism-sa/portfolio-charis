@@ -1,7 +1,7 @@
 // src/sections/About.tsx
 import { motion } from 'framer-motion';
 import { PERSONAL_INFO } from '../constants/data';
-import { CheckCircle2, Code2, Database, Layout, Server, Briefcase } from 'lucide-react';
+import { Code2, Database, Layout, Server, Briefcase } from 'lucide-react';
 
 const HIGHLIGHTS = [
   { text: "Full Stack Development", icon: <Layout className="text-accent-cyan" size={18} /> },
