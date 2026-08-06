@@ -25,8 +25,10 @@ import {
   FaFigma,
   FaPaintBrush,
 } from "react-icons/fa";
-import { TbBrandFramerMotion } from "react-icons/tb";
 import { VscVscode } from "react-icons/vsc";
+import { Lightbulb, Search, ClipboardList, MessageSquare, Users, Clock, Brain, ShieldCheck, FileText, GraduationCap, Zap } from 'lucide-react';
+
+
 export const PERSONAL_INFO = {
   name: "Charis Maulana Setya Adi",
   roles: ["Full Stack Developer", "System Analyst", "QA Engineer"],
@@ -48,7 +50,7 @@ export const EXPERIENCE = [
   {
     id: 1,
     role: "Fullstack Developer | System Analyst",
-    company: "Danone Indonesia (Aqua & VIT)",
+    company: "Danone Indonesia",
     year: "Sept 2025 - Mar 2026",
     type: "Remote",
     description:
@@ -104,7 +106,7 @@ export const EXPERIENCE = [
   },
   {
     id: 4,
-    role: "QA Engineer (Aptika)",
+    role: "Internship - QA Engineer",
     company: "Diskominfo Kota Malang",
     year: "Juni 2024 - Agust 2024",
     type: "On-site",
@@ -154,13 +156,13 @@ export const EDUCATION = [
 export const PROJECTS = [
   {
     id: 1,
-    title: "MOCIS & MOC.COM",
+    title: "Management of Change Information System (Workflow Website)",
     year: "2025 - 2026",
-    description: "Pengembangan sistem workflow internal berbasis web secara mandiri (Fullstack) untuk divisi Danone Indonesia. Proyek ini mendigitalisasi dan mengotomatisasi alur kerja manajemen perubahan pada unit bisnis Aqua dan VIT.",
+    description: "Pengembangan sistem workflow internal berbasis web secara mandiri (Fullstack). Proyek ini mendigitalisasi dan mengotomatisasi alur kerja manajemen perubahan pada unit bisnis.",
     images: [
-      "/assets/project-mocis-dashboard.jpg",
-      "/assets/project-mocis-2.jpg", 
-      "/assets/project-mocis-3.jpg",
+      "/assets/project-mocis-dashboard.png",
+      "/assets/project-moc.com-dashboard.png", 
+      "/assets/bukti.jpg",
     ],
     // Ubah techStack menjadi array of objects dengan ikon
     techStack: [
@@ -168,7 +170,11 @@ export const PROJECTS = [
       { name: "CodeIgniter3", icon: SiCodeigniter },
       { name: "MySQL", icon: SiMysql },
       { name: "Tailwind CSS", icon: SiTailwindcss },
-      { name: "JavaScript", icon: SiJavascript }
+      { name: "JavaScript", icon: SiJavascript },
+      { name: "Google Workspace", icon: FaGoogle },
+      { name: "Microsoft Office", icon: FaMicrosoft },
+      { name: "Technical Documentation", icon: null },
+      { name: "UAT", icon: null },
     ],
     github: "#",
     demo: "#",
@@ -197,18 +203,12 @@ export const TECH_STACK = [
   { name: "Postman", icon: SiPostman, color: "text-orange-500" },
   { name: "Docker", icon: SiDocker, color: "text-blue-500" },
   { name: "Notion", icon: SiNotion, color: "text-gray-300" },
-  { name: "Framer Motion", icon: TbBrandFramerMotion, color: "text-pink-500" },
-  { name: "Bootstrap", icon: SiBootstrap, color: "text-purple-600" },
 ];
 
 export const TOOLS = [
   { name: "Microsoft Office", icon: FaMicrosoft, color: "text-blue-500" },
   { name: "Google Workspace", icon: FaGoogle, color: "text-blue-400" },
   { name: "Figma", icon: FaFigma, color: "text-pink-500" },
-  // { name: "Canva", icon: FaPaintBrush, color: "text-cyan-500" },
-  // { name: "Photoshop", icon: FaPalette, color: "text-blue-600" },
-  // { name: "Premiere Pro", icon: FaVideo, color: "text-purple-500" },
-  // { name: "CapCut", icon: FaFilm, color: "text-white" },
   { name: "VS Code", icon: VscVscode, color: "text-blue-500" },
   { name: "Jira", icon: SiJira, color: "text-blue-400" },
   { name: "Vercel", icon: SiVercel, color: "text-white" },
@@ -217,22 +217,15 @@ export const TOOLS = [
 ];
 
 export const SOFT_SKILLS = [
-  "Problem Solving",
-  "Komunikasi Efektif",
-  "Kerjasama Tim",
-  "Manajemen Waktu",
-  "Berpikir Kritis",
-  "Adaptasi Cepat",
-  "Analisis Sistem",
-  "Perhatian pada Detail",
-  "Presentasi Teknis",
-  "Fast Learning",
-  "Leadership",
-  "Agile/Scrum",
-  "Mentoring & Coaching",
-  "Requirement Gathering",
-  "Quality Assurance (QA)",
-  "Troubleshooting",
-  "Technical Documentation",
-  "Client Communication",
+  { name: "Problem Solving", icon: Lightbulb },
+  { name: "System Analysis", icon: Search },
+  { name: "Requirement Gathering", icon: ClipboardList },
+  { name: "Komunikasi Efektif", icon: MessageSquare },
+  { name: "Kerjasama Tim", icon: Users },
+  { name: "Manajemen Waktu", icon: Clock },
+  { name: "Berpikir Kritis", icon: Brain },
+  { name: "Quality Assurance", icon: ShieldCheck },
+  { name: "Technical Documentation", icon: FileText },
+  { name: "Mentoring & Coaching", icon: GraduationCap },
+  { name: "Adaptasi Cepat", icon: Zap },
 ];

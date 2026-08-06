@@ -23,8 +23,8 @@ function App() {
         {/* Urutan section bisa disesuaikan nantinya */}
         <Hero />
         <About />
-        <TechStack />
         <ExperienceEducation />
+        <TechStack />
         <Projects />
         <Contact />
       </Suspense>

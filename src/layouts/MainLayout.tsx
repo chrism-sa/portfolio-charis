@@ -1,6 +1,8 @@
+// src/layouts/MainLayout.tsx
 import type { ReactNode } from 'react';
-import { ReactLenis } from 'lenis/react';
-import CustomCursor from '../components/CustomCursor'; // Pastikan komponen ini tetap ada
+import ThreeBackground from '../components/ThreeBackground';
+import CustomCursor from '../components/CustomCursor';
+import Navbar from '../components/Navbar'; // <-- 1. Import Navbar di sini
 
 interface MainLayoutProps {
   children: ReactNode;
@@ -8,23 +10,20 @@ interface MainLayoutProps {
 
 export default function MainLayout({ children }: MainLayoutProps) {
   return (
-    <ReactLenis root>
-      <div className="relative w-full min-h-screen bg-background">
-        <CustomCursor />
-        
-        {/* Efek Ambient Glow Global */}
-        <div className="fixed top-0 inset-x-0 h-[500px] w-full bg-gradient-to-b from-accent-purple/5 to-transparent pointer-events-none -z-10 blur-3xl"></div>
-
-        {/* Placeholder untuk Navbar modern (Sticky) */}
-        {/* <Navbar /> */}
-
-        <main className="relative z-10 w-full flex flex-col items-center">
-          {children}
-        </main>
-
-        {/* Placeholder untuk Footer */}
-        {/* <Footer /> */}
+    <div className="relative min-h-screen bg-background text-white selection:bg-accent-cyan/30 overflow-hidden">
+      {/* 2. Panggil Navbar di dalam layout */}
+      <Navbar /> 
+      
+      <CustomCursor />
+      
+      <div className="fixed inset-0 z-0">
+        <ThreeBackground />
       </div>
-    </ReactLenis>
+
+      <main className="relative z-10 w-full overflow-x-hidden pt-24"> 
+        {/* Catatan: pt-24 (padding-top) ditambahkan agar konten pertama (Hero) tidak tertutup Navbar */}
+        {children}
+      </main>
+    </div>
   );
 }

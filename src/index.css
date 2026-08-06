@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   /* Kustomisasi Palet Warna Premium */
   --color-background: #0a0a0a;
