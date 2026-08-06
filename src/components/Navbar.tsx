@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X } from "lucide-react";
 
 const NAV_LINKS = [
-  { name: "Beranda", href: "#" },
+  { name: "Tentang Saya", href: "#" },
   { name: "Perjalanan", href: "#experience" },
   { name: "Keahlian", href: "#skills" },
   { name: "Proyek", href: "#projects" },
