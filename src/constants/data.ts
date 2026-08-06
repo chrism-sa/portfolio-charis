@@ -42,7 +42,7 @@ export const PERSONAL_INFO = {
   socials: {
     github: "https://github.com/chrism-sa",
     linkedin: "https://linkedin.com/in/charismaulanasa",
-    instagram: "https://instagram.com/",
+    instagram: "https://instagram.com/charismaulana.al",
   },
 };
 

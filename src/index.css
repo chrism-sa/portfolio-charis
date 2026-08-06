@@ -39,3 +39,10 @@ html {
     @apply bg-white/20;
   }
 }
+
+/* Sembunyikan kursor asli di perangkat desktop (yang memiliki pointer/mouse) */
+@media (pointer: fine) {
+  body, a, button {
+    cursor: none !important;
+  }
+}
