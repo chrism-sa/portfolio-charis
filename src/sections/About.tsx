@@ -1,53 +1,90 @@
 // src/sections/About.tsx
 import { motion } from 'framer-motion';
-import { PERSONAL_INFO, SOFT_SKILLS } from '../constants/data';
+import { PERSONAL_INFO } from '../constants/data';
+import { CheckCircle2, Code2, Database, Layout, Server, Briefcase } from 'lucide-react';
+
+const HIGHLIGHTS = [
+  { text: "Full Stack Development", icon: <Layout className="text-accent-cyan" size={18} /> },
+  { text: "Backend Architecture", icon: <Server className="text-accent-purple" size={18} /> },
+  { text: "REST API Integration", icon: <Code2 className="text-accent-cyan" size={18} /> },
+  { text: "Database Design", icon: <Database className="text-accent-purple" size={18} /> },
+  { text: "System Analysis", icon: <Briefcase className="text-accent-cyan" size={18} /> },
+];
+
+const STATS = [
+  { value: "2+", label: "Tahun Pengalaman" },
+  { value: "5+", label: "Proyek Selesai" },
+  { value: "15+", label: "Teknologi Dikuasai" },
+];
 
 export default function About() {
   return (
-    <section id="about" className="py-24 px-6 max-w-7xl mx-auto relative z-10">
+    <section id="about" className="py-32 px-6 max-w-7xl mx-auto relative z-10">
       <motion.div 
-        initial={{ opacity: 0, y: 30 }}
+        initial={{ opacity: 0, y: 40 }}
         whileInView={{ opacity: 1, y: 0 }}
-        viewport={{ once: true }}
-        transition={{ duration: 0.8 }}
-        className="backdrop-blur-xl bg-white/5 border border-white/10 p-8 md:p-12 rounded-3xl shadow-2xl overflow-hidden relative"
+        viewport={{ once: true, margin: "-100px" }}
+        transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
+        className="relative"
       >
-        {/* Glow Effect */}
-        <div className="absolute -top-32 -right-32 w-96 h-96 bg-purple-500/20 rounded-full blur-[100px]"></div>
-        
-        <div className="grid md:grid-cols-[1fr_2fr] gap-12 items-center relative z-10">
-          {/* Foto Profil / Wisuda */}
-          <div className="relative group mx-auto w-64 md:w-full max-w-sm">
-            <div className="absolute -inset-1 bg-gradient-to-r from-cyan-400 to-purple-600 rounded-2xl blur opacity-25 group-hover:opacity-75 transition duration-500"></div>
-            <div className="relative aspect-[3/4] rounded-2xl overflow-hidden border border-white/10 bg-secondary">
+        <div className="grid lg:grid-cols-[1fr_1.5fr] gap-16 lg:gap-24 items-center">
+          
+          {/* Kolom Kiri: Foto & Stats */}
+          <div className="relative mx-auto lg:mx-0 w-full max-w-md">
+            {/* Dekorasi Background Foto */}
+            <div className="absolute -inset-4 bg-gradient-to-tr from-accent-cyan/20 to-accent-purple/20 rounded-[2.5rem] blur-2xl opacity-50"></div>
+            
+            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden border border-border-subtle bg-surface z-10 group">
               <img 
                 src={PERSONAL_INFO.aboutImage} 
-                alt="Charis Maulana Setya Adi" 
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                alt={PERSONAL_INFO.name} 
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 onError={(e) => {
-                  (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x600?text=Foto+Wisuda';
+                  (e.target as HTMLImageElement).src = 'https://via.placeholder.com/400x500?text=Foto+Wisuda';
                 }}
               />
+              
+              {/* Overlay Gradient on Image */}
+              <div className="absolute inset-0 bg-gradient-to-t from-background/80 via-transparent to-transparent opacity-60"></div>
             </div>
-          </div>
 
-          {/* Deskripsi & Soft Skills */}
-          <div>
-            <h2 className="text-3xl md:text-5xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-400">
-              Tentang Saya
-            </h2>
-            <p className="text-gray-300 text-lg leading-relaxed mb-8">
-              {PERSONAL_INFO.summary}
-            </p>
-
-            <div className="grid sm:grid-cols-2 gap-6">
-              {SOFT_SKILLS.map((skill, index) => (
-                <div key={index} className="bg-white/5 border border-white/10 p-5 rounded-xl hover:bg-white/10 transition-colors">
-                  <h3 className="text-cyan-400 font-semibold text-xl mb-2">{skill.title}</h3>
-                  <p className="text-gray-400 text-sm leading-relaxed">{skill.description}</p>
+            {/* Floating Stats Bar */}
+            <div className="relative z-20 -mt-12 mx-auto w-[90%] bg-surface/80 backdrop-blur-xl border border-border-hover rounded-2xl p-6 shadow-2xl flex justify-between divide-x divide-border-subtle">
+              {STATS.map((stat, i) => (
+                <div key={i} className="flex-1 text-center px-2">
+                  <div className="text-2xl font-bold text-white mb-1">{stat.value}</div>
+                  <div className="text-[10px] uppercase tracking-wider text-gray-500 font-medium">{stat.label}</div>
                 </div>
               ))}
             </div>
+          </div>
+
+          {/* Kolom Kanan: Teks & Highlight */}
+          <div className="flex flex-col justify-center">
+            <h2 className="text-4xl md:text-5xl font-bold tracking-tight text-white mb-8">
+              Mengenal Lebih <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent-cyan to-accent-purple">Dekat.</span>
+            </h2>
+            
+            <div className="space-y-6 text-gray-400 text-lg leading-relaxed mb-10">
+              <p>
+                Halo! Saya <strong className="text-white font-semibold">Charis Maulana Setya Adi</strong>, seorang {PERSONAL_INFO.roles[0]} yang berbasis di Malang, Indonesia.
+              </p>
+              <p style={{ textAlign: 'justify' }}>
+                {PERSONAL_INFO.summary}
+              </p>
+            </div>
+
+            <div className="grid sm:grid-cols-2 gap-x-8 gap-y-4">
+              {HIGHLIGHTS.map((item, index) => (
+                <div key={index} className="flex items-center gap-3">
+                  <div className="flex-shrink-0 w-8 h-8 rounded-full bg-white/5 border border-border-subtle flex items-center justify-center">
+                    {item.icon}
+                  </div>
+                  <span className="text-gray-300 font-medium text-sm">{item.text}</span>
+                </div>
+              ))}
+            </div>
+
           </div>
         </div>
       </motion.div>

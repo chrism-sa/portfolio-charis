@@ -1,1 +1,37 @@
 @import "tailwindcss";
+
+@theme {
+  /* Kustomisasi Palet Warna Premium */
+  --color-background: #0a0a0a;
+  --color-surface: #111111;
+  --color-border-subtle: rgba(255, 255, 255, 0.05);
+  --color-border-hover: rgba(255, 255, 255, 0.15);
+  
+  /* Aksen Neon */
+  --color-accent-cyan: #22d3ee;
+  --color-accent-purple: #c084fc;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    @apply bg-background text-gray-300 antialiased overflow-x-hidden selection:bg-accent-cyan/30 selection:text-cyan-100;
+  }
+
+  /* Custom Scrollbar bergaya minimalis */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply bg-white/10 rounded-full border border-background;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-white/20;
+  }
+}
